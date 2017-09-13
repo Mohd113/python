@@ -1,10 +1,8 @@
 if __name__ == '__main__':
-    with open("C:\\Users\\Chiefan\\Documents\\delivery1.txt", "r") as ifile:
-        fline = int(ifile.readline())
-        for i in range(0, fline):
-            cline = int(ifile.readline())
-            time = 0
-            for k in range(0, cline):
-                time += int(ifile.readline())
-            time *= 2
-            print str(i+1) + ". " + str(time)
+    with open("delivery.txt", "r") as f:
+        cases = int(next(f))
+        for i in range(cases):
+            lines = int(next(f))
+            time = sum(int(next(f)) for _ in range(lines)) * 2
+            print("{}. {}".format(i+1, time))
+
